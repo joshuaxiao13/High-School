@@ -1,0 +1,295 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+ \hypersetup{
+     colorlinks=true,
+     linkcolor=blue,
+     filecolor=blue,
+     citecolor = black,      
+     urlcolor=cyan,
+}
+
+\title{Induction and Binomial Theorem}
+\author{Joshua Xiao}
+\date{December 2020}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Disclaimer: }This is a little handout I made for my grade 12 math class. Use at your disposal and enjoy. 
+
+\section{Induction}
+
+\textbf{Induction} is a method of proof which the desired result is first shown to hold for a certain value (the Base Case). It is then shown that if the desired result holds for a certain value, it then holds for another closely related value.
+
+\bigskip
+
+\subsection{Principles}
+
+\begin{enumerate}
+  \item Show the statement is true for the base case.
+  \item Assume the statement is true for a general term $n = k$. This is often referred to as the \textbf{inductive hypothesis}.
+  \item Algebraically prove the statement is true for $n = k + 1$.
+\end{enumerate}
+
+\bigskip
+
+\subsection{Examples}
+
+\textbf{Example 1.1} Prove that $1 + 2 + 3 + ... + n =\frac{n(n+1)}{2}$.
+\newline
+\bigskip
+For $n = 1$,
+$$\frac{n(n+1)}{2} = \frac{1(1+1)}{2} = 1$$
+\newline
+Since 1 = 1, the statement is true for $n = 1$. Assume that the statement is true for $n = k$. That is, assume
+$$1 + 2 + 3 + ... + k = \frac{k(k+1)}{2}$$
+We now show the statement is true for $n = k + 1$. We begin with,
+$$1 + 2 + 3 + ... + k + (k + 1)$$
+Using our inductive hypothesis, we can rewrite this as,
+\begin{align*}
+   \frac{k(k+1)}{2} + (k + 1) & = \frac{k(k+1)+2(k+1)}{2} \\
+   & = \frac{(k+1)(k+2)}{2}
+\end{align*}
+By Mathematical Induction, it follows that the sum of the first $n$ positive integers is equal to 
+$$\sum_{k = 1}^{n}k = \frac{n(n+1)}{2}$$
+\newline
+
+\noindent \textbf{Example 1.2} Prove that $5^n + 9^n + 2$ is divisible by 4 for all positive integers $n$. \\\\ 
+In order for the expression to be divisible by 4, the following must be true:
+\newline
+$$\frac{5^n + 9^n + 2}{4} \in Z$$
+For $n = 1$,
+\begin{align*}
+    \frac{5^n + 9^n + 2}{4} & = \frac{5 + 9 + 2}{4} \\
+    & = \frac{16}{4} \\ & = 4
+\end{align*}
+Since $4 \in Z$, the statement is true for $n = 1$. Assume the statement is true for $n = k$. That is, assume
+$$\frac{5^k + 9^k + 2}{4} \in Z$$
+We now show that the statement is true for $n = k + 1$. We begin with,
+$$\frac{5^{k+1} + 9^{k+1} + 2}{4} = \frac{5(5^k)+9(9^k)+2}{4}$$
+We want to somehow pull out the inductive hypothesis. Adding and subtracting $4(5^k) + 16$ in the numerator will help us achieve this.
+\begin{align*}
+   \frac{5(5^k)+9(9^k)+2}{4} & = \frac{5(5^k)+9(9^k)+2+4(5^k)+16-4(5^k)-16}{4} \\
+   & = \frac{9(5^k)+9(4^k)+18-4(5^k)-16}{4} \\
+   &= 9\cdot\frac{(5^k + 9^k + 2)}{4} - \frac{4(5^k)+16}{4} \\
+   &= 9\cdot\frac{(5^k + 9^k + 2)}{4} - 5^k - 4
+\end{align*}
+Using our induction hypothesis, we can conclude this value is an integer. Thus, by Mathematical Induction, it follows that $5^n + 9^n + 2$ is divisible by $4$ for all positive integers $n$.
+
+\bigskip
+
+\subsection{Practice Problems}
+
+\begin{enumerate}
+    \item Prove by induction: $\displaystyle\sum_{k=1}^{n}k^2 = \frac{n(n+1)(2n+1)}{6}$ for all positive integers $n$. 
+    \item Prove by induction that $n^3 - n$ is divisible by 6 for all integers $n \geq 0$.
+    \item Prove by induction that $n! > 2^n$ for all positive integers $n \geq 4$
+    \item Prove by induction that $x-y$ is a factor of $x^{2n}-y^{2n}$ for all integers $n \geq 1$.
+    \item Prove by induction that $12^n + 2(5^{n-1})$ is a multiple of $7$ for all $n \in Z^{+}$.
+    \item Prove by induction that $(1+i)^{4n} = (-4)^n$ for all natural numbers $n$. Recall $i = \sqrt{-1}$.
+    \item Prove by induction that $n$ lines intersect at a maximum of $\frac{n(n-1)}{2}$ distinct points.
+     \item The towers of Hanoi is a classical puzzle. You have three pillars, with $n$ gold plates on the first pillar, all in different sizes with the smaller plates above the larger plates. Your task is to move one plate at the time, such that you end up with all $n$ plates at the last pillar. During this procedure, a larger plate is never allowed to be on top of a smaller plate. Show that this can be done using $2^{n}- 1$ moves.
+\end{enumerate}
+
+\bigskip
+
+If you're ever stuck on an induction problem, you can always search up the question online. Chances are there's probably a solution out there, especially for popular induction problems like the tower of Hanoi.
+
+\bigskip
+
+\section{Binomial Theorem}
+
+\subsection{Pascal's Triangle}
+
+The \textbf{Binomial Theorem} is a very useful theorem (it appears a lot in math contests). In order to understand it, you need to be familiar with Pascal's Triangle.
+\begin{center}
+    \begin{tabular}{rccccccccc}
+    $n=0$:&    &    &    &    &  1\\\noalign{\smallskip\smallskip}
+    $n=1$:&    &    &    &  1 &    &  1\\\noalign{\smallskip\smallskip}
+    $n=2$:&    &    &  1 &    &  2 &    &  1\\\noalign{\smallskip\smallskip}
+    $n=3$:&    &  1 &    &  3 &    &  3 &    &  1\\\noalign{\smallskip\smallskip}
+    $n=4$:&  1 &    &  4 &    &  6 &    &  4 &    &  1\\\noalign{\smallskip\smallskip}
+    \end{tabular}
+\end{center}
+Notice that Pascal's Triangle can be rewritten as,
+\begin{center}
+    \begin{tabular}{rccccccccc}
+    $n=0$:&    &    &    &    &  ${0 \choose 0}$\\\noalign{\smallskip\smallskip}
+     $n=1$:&    &    &    &  ${1 \choose 0}$ & & ${1 \choose 1}$\\\noalign{\smallskip\smallskip}
+    $n=2$:&    &    &  ${2 \choose 0}$ &    &  ${2 \choose 1}$ &    &  ${2 \choose 2}$\\\noalign{\smallskip\smallskip}
+    $n=3$:&    &  ${3\choose0}$ &    &  ${3\choose1}$ &    &  ${3\choose2}$ &    &  ${3\choose3}$\\\noalign{\smallskip\smallskip}
+    $n=4$:&  ${4\choose0}$ &    & ${4\choose1}$ &    &  ${4\choose2}$ &    &  ${4\choose3}$ &    &  ${4\choose4}$\\\noalign{\smallskip\smallskip}
+    \end{tabular}
+\end{center}
+
+\bigskip
+
+\noindent\textbf{Definition 2.1}
+\begin{framed}
+$${n \choose k} = \frac{n!}{k!(n-k)!} = \frac{n(n - 1)(n-2)\:...\: (n - k + 2)(n - k + 1)}{k(k-1)(k-2)\:...\:(3)(2)(1)}$$
+\end{framed}
+Due to the symmetry of Pascal's Triangle, 
+$${n\choose k} = {n\choose n - k}$$
+
+Recall that in Pascal's Triangle, each term is the sum of the two terms above. This relationship is formally expressed in \textbf{Pascal's Identity}. \\
+
+\textbf{Theorem 2.1 Pascal's Identity}
+\begin{framed}
+$${n \choose k} + {n \choose k + 1} = {n + 1 \choose k + 1}$$
+\end{framed}
+The sum of all elements in the nth row of Pascal's Triangle (0-indexed), is given by 
+
+$$\sum_{k=0}^{n} {n \choose k} = 2^n$$
+
+\bigskip
+
+\subsection{Binomial Theorem}
+
+\textbf{Theorem 2.2 Binomial Theorem}
+\begin{framed}
+\begin{align*}
+    (x+y)^n & = \sum_{k=0}^{n}{n\choose k}x^{n-k}y^k\\ & = {n\choose0}x^n + {n\choose1} + x^{n-1}y + ... + {n\choose n - 1}xy^{n-1} + {n \choose n}y^n \\
+\end{align*}
+\end{framed}
+
+We can write the general term $t_g$ as,
+$$t_g = {n\choose k}x^{n-k}y^r$$
+
+\bigskip
+
+\noindent\textbf{Example 2.1} What are the coefficients of the maximum and minimum powers in the expansion of $(2x^3 - 3)^5$?\\
+
+The general term in the expansion of $(2x^3 -3)^5$ is
+
+$$t_g = {5\choose k}(2x^3)^{5-k}(-3)^k$$ where $0 \leq k \leq 5$. Simplifying,
+$$t_g = (-1)^{k}{5\choose k}2^{5-k}3^{k}x^{15-3k}$$
+The exponent of $x$ depends on the quantity $15-3k$. Keeping in mind $0 \leq k \leq 5$, we have a maximum exponent when $k = 0$ and a minimum exponent when $k = 5$. Thus, the coefficient of the minimum power is given by
+
+\begin{align*}
+    (-1)^{k}{5\choose k}2^{5-k}3^{k} & = (-1)^{5}{5\choose 5}2^{5-5}3^5 \\ & = -3^5 \\ & = -243
+\end{align*}
+and the coefficient of the maximum power is given by
+\begin{align*}
+    (-1)^{k}{5\choose k}2^{5-k}3^{k} & = (-1)^{0}{5\choose 0}2^{5-0}3^0 \\ & = 2^5 \\ & = 32
+\end{align*}
+
+\bigskip
+
+\noindent\textbf{Example 2.2} What is the coefficient of $x^8$ in the expansion of $(x+2)^{10}(5-\frac{1}{x})^6$? \\
+
+First we find the general term for the expansion of $(x+2)^{10}$ .
+$$t_g = {10\choose k}x^{10-k}2^k$$
+where $0\leq k \leq 10$.\\\\
+Similarly, the general term for the expansion of $(5-\frac{1}{x})^6$ is given by
+$$t_{g} = {6 \choose r}(5)^{6-r}({\frac{-1}{x}})^r = (-1)^r{6\choose r}5^{6-r}x^{-r} $$
+Where $0\leq r \leq 6$. \\\\
+In the expansion of $(x+2)^{10}(5-\frac{1}{x})^6$, we essentially choose two terms, one from $(x+2)^{10}$ and another from $(5-\frac{1}{x})^6$, and multiply them together. By looking at the general terms, the possible powers that exist in the expansion of $(x+2)^{10}$ are $x^{0},\:x^{1}$, ... , $x^{10}$. Similarly, the possible powers that exist in the expansion of $(5-\frac{1}{x})^6$ are $x^{0},\:x^{-1}$, ... , $x^{-6}$. We can pair up the powers of $x^{0},\:x^{-1},\:x^{-2}$ from the expansion of $(5-\frac{1}{x})^6$ with the powers of $x^{8},\:x^{9},\:x^{10}$ from the expansion of $(x+2)^{10}$ respectively, to get a final power of $x^8$ (think about why this is so). \\
+
+Thus, we perform the following calculations:\\
+
+\textbf{Pair \#1:} $x^{0}$ and $x^{8}$, which occurs when $r = 0,k = 2$ \\
+
+\begin{align*}
+    (-1)^r{6\choose r}5^{6-r}x^{-r} \cdot {10\choose k}x^{10-k}2^k & =(-1)^0{6\choose 0}5^{6-0}x^{0}\cdot {10\choose 2}x^{10-2}2^2 \\
+    & = 5^6\cdot{10\choose 2}2^2x^8 \\
+    & = 2812500\:x^8
+\end{align*}
+
+\textbf{Pair \#2:} $x^{-1}$ and $x^{9}$, which occurs when $r = 1,k = 1$ \\
+
+\begin{align*}
+    (-1)^r{6\choose r}5^{6-r}x^{-r} \cdot {10\choose k}x^{10-k}2^k & =(-1)^1{6\choose 1}5^{6-1}x^{-1}\cdot {10\choose 1}x^{10-1}2^1 \\
+    & = -{6\choose 1}5^5x^{-1}\cdot{10\choose 1}2^1x^9 \\
+    & = -375000\:x^8
+\end{align*}
+
+\textbf{Pair \#3:} $x^{-2}$ and $x^{10}$, which occurs when $r = 2,k = 0$ \\
+
+\begin{align*}
+    (-1)^r{6\choose r}5^{6-r}x^{-r} \cdot {10\choose k}x^{10-k}2^k & =(-1)^2{6\choose 2}5^{6-2}x^{-2}\cdot {10\choose 0}x^{10-0}2^0 \\
+    & = {6\choose 2}5^4x^{-2}\cdot{10\choose 0}x^{10} \\
+    & = 9375\:x^8
+\end{align*}
+
+We simply add up all these terms to find the final coefficient of $x^8$ in the final expansion of $(x+2)^{10}(5-\frac{1}{x})^6$.
+
+$$2812500\:x^8 - 375000\:x^8 + 9375\:x^8 = 2446875\:x^8$$ \\
+Therefore, the coefficient of $x^8$ in the expansion is equal to 2,446,875.
+
+\bigskip
+
+\subsection{Practice Problems}
+
+\begin{enumerate}
+    \item Expand $(a+b)^5$ using Binomial Theorem.
+    \item Expand $(2x – 5y)^7$ using Bionomial Theorem.
+    \item What are the coefficients of $x^{14}$ and $x^{15}$ in the expansion of $$(2-x^2)^5(3+x^4)^3$$
+    How many terms are there after collecting like terms?
+    \item Expand $(x-\frac{1}{x})^6$ using Binomial Theorem.
+    \item What are the maximum and minimum powers in the expansion of $$(5y^3 - 9y)^5$$
+    What are their coefficients?
+    \item (1992 AIME) In Pascal's Triangle, each entry is the sum of the two entries above it. In which row of Pascal's Triangle do three consecutive entries occur that are in the ratio $3: 4: 5$?
+    \item Prove by induction that $(1+x)^n \geq 1+nx$ for all non-negative integers $n$, where $x$ is a fixed real number greater than zero. (Bernoulli's Inequality)
+    \item Prove the Binomial Theorem by induction.
+\end{enumerate}
+
+\bigskip
+
+\section{Negative Choose}
+
+A useful identity to keep in mind is the following:
+
+\bigskip
+
+For a negative integer $n$ and integer $k$,
+\begin{center}
+    \includegraphics[scale = 0.25]{images/negative.png}
+\end{center}
+This is in agreement with the Binomial Theorem. For more information, read up on the following paper:
+\color{blue}\url{https://arxiv.org/pdf/1105.3689.pdf} \\\\
+\color{black}
+\textbf{Example 3.1} Rewrite $\displaystyle{-9 \choose 5}$ using the identity above. \\
+Using the identity, 
+
+$${-9 \choose 5} = (-1)^5{9 + 5 - 1 \choose 5} = -{13 \choose 5}$$
+
+\bigskip
+
+\noindent\textbf{Example 3.2} Rewrite $\displaystyle{13 \choose 3}$ with a negative argument. \\\\
+\smallskip
+We can simply use the identity above again, because it works (check with google calculator).
+
+$${13 \choose 3} = (-1)^3{-13 + 3 - 1 \choose 3} = -{-11 \choose 3}$$
+
+\bigskip
+
+\noindent\textbf{Example 3.3} Expand $(2x+y)^{-10}$ using Binomial Theorem.\\
+
+Using Binomial Theorem for negative arguments,
+
+$$(2x+y)^{-10} = \sum_{k=0}^{\infty}{-10\choose k}(2x)^{-10-k}y^{k}$$
+
+We can simplify this using the identity above,
+
+$$(2x+y)^{-10} & = \sum_{k=0}^{\infty}(-1)^k{10 + k - 1\choose k}2^{-10-k}x^{-10-k}y^{k}$$
+
+\bigskip
+
+Note that the sum goes to infinity.
+
+\bigskip
+
+\subsection{Practice Problems}
+\begin{enumerate}
+    \item Rewrite $\displaystyle{-15 \choose 2}$ with a positive argument.
+    \item Rewrite $\displaystyle{142 \choose 45}$ with a negative argument.
+    \item Expand $(-x-y^2)^{-5}$ using Binomial Theorem for negative arguments.
+\end{enumerate}
+\end{document}
