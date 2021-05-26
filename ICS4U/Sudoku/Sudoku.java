@@ -591,7 +591,7 @@ class Sudoku {
     public static int menu() {
         clearScreen();
         System.out.println(BORDER_COLOR);
-        System.out.println("          _____                    _____                    _____                   _______                   _____                    _____          w");
+        System.out.println("          _____                    _____                    _____                   _______                   _____                    _____          ");
         System.out.println("         /\\    \\                  /\\    \\                  /\\    \\                 /::\\    \\                 /\\    \\                  /\\    \\         ");
         System.out.println("        /::\\    \\                /::\\____\\                /::\\    \\               /::::\\    \\               /::\\____\\                /::\\____\\        ");
         System.out.println("       /::::\\    \\              /:::/    /               /::::\\    \\             /::::::\\    \\             /:::/    /               /:::/    /        ");
