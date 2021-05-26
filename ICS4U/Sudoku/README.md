@@ -1,6 +1,6 @@
 # Sudoku
 
-<img src="photos/menu.png">
+<img src="photos/menu.png" alt="main menu">
 
 This dynamic program offers three different services for different sized Sudokus.
 
