@@ -16,11 +16,12 @@ the programs outputs that the user's grid is a valid solution. If the grid is on
 
 The Solver takes in a Sudoku grid and outputs all valid solutions, or a single valid solution, depending on what the user wants. The more clues
 the user gives, the faster the runtime. For instance, for a 9x9, it will take more time to solve a Sudoku that has 17 clues, compared to one that
-has 30 clues. The Solver can output a single solution for any Sudoku smaller than a 16x16 in a few seconds. The empty cells from the user's input will
-be highlighted in green in the solutions for clarity.
+has 30 clues.
 
 <img src="photos/solve1.png" alt="user Sudoku grid" height="250">
-<img src="photos/solve2.png" alt="solutions found pt 1" height="350">
+
+The Solver can output a single solution for any Sudoku smaller than a 16x16 in a matter of seconds. The empty cells of the original Sudoku will be highlighted in green for clarity.
+
 <img src="photos/solve3.png" alt="solutions found pt 2" height="380">
      
      
