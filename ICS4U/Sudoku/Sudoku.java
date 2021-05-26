@@ -32,12 +32,12 @@ import java.util.*;
 
 class Sudoku {
 
-    static final String RESET = "\u001B[0m";                // RESET WHITE
-    static final String BORDER_COLOR = "\033[1;33m";        // BRIGHT YELLOW
-    static final String CYAN_BOLD = "\033[1;36m";    // CYAN
-    static final String GREEN_BOLD = "\033[1;32m";   // GREEN
-    static final String RED_BOLD = "\033[1;31m";     // RED
-    static final String PURPLE_BOLD = "\033[1;35m";  // PURPLE
+    static final String RESET = "\u001B[0m";            // RESET WHITE
+    static final String BORDER_COLOR = "\033[1;33m";    // BRIGHT YELLOW
+    static final String CYAN_BOLD = "\033[1;36m";       // CYAN
+    static final String GREEN_BOLD = "\033[1;32m";      // GREEN
+    static final String RED_BOLD = "\033[1;31m";        // RED
+    static final String PURPLE_BOLD = "\033[1;35m";     // PURPLE
 
     static Scanner scan;
     static int counter;
