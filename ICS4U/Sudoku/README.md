@@ -2,7 +2,7 @@
 
 <img src="photos/menu.png">
 
-This program offers three different services.
+This dynamic program offers three different services for different sized Sudokus.
 
 ### 1. Validator
     
