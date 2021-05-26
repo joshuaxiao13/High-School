@@ -20,7 +20,8 @@ has 30 clues. The Solver can output a single solution for any Sudoku smaller tha
 be highlighted in green in the solutions for clarity.
 
 <img src="photos/solve1.png" alt="user Sudoku grid" height="250">
-<img src="photos/solve3.png" alt="solutions found" height="380">
+<img src="photos/solve2.png" alt="solutions found pt 1" height="350">
+<img src="photos/solve3.png" alt="solutions found pt 2" height="380">
      
      
 ### 3. Generator
