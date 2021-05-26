@@ -10,7 +10,7 @@ The Validator takes in a Sudoku grid and outputs if the user's solution is valid
 sub-square is unique and in range. If the solution is invalid, the program highlights the first matching cells found in red. If the grid is fully filled in and valid, 
 the programs outputs that the user's grid is a valid solution. If the grid is only partially filled, and has potential to be a valid Sudoku, the program will output this.
 
-<img src="photos/validate.png" height="300">
+<img src="photos/validate.png" height="280">
     
 ### 2. Solver
 
@@ -20,7 +20,7 @@ has 30 clues. The Solver can output a single solution for any Sudoku smaller tha
 be highlighted in green in the solutions for clarity.
 
 <img src="photos/solve1.png" height="250">
-<img src="photos/solve3.png" height="350">
+<img src="photos/solve3.png" height="380">
      
      
 ### 3. Generator
@@ -29,7 +29,7 @@ The Generator asks for the dimensions of a Sudoku (equal to the maximum value al
 valid solution. The user can then attempt to solve the Sudoku, or give up and see the solution. Similar to the Sudoku Solver, the empty cells that are solved will
 be highlighted in green.
 
-<img src="photos/generate.png" width = "450">
+<img src="photos/generate.png" width = "480">
 
 
-**Note**: It is not recommended to use the olver and Generator for grids larger than 16x16, as a simple back-tracking algorithm is used. A faster algorithm would be Donald Knuth's [Dancing Links](https://en.wikipedia.org/wiki/Dancing_Links) technique.
+**Note**: It is not recommended to use the Solver or Generator for Sudokus larger than 16x16, since a simple back-tracking algorithm is used. A faster algorithm would be Donald Knuth's [Dancing Links](https://en.wikipedia.org/wiki/Dancing_Links) technique.
