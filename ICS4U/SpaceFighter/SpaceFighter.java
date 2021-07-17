@@ -1,7 +1,4 @@
 /*
-Joshua Xiao, Ivy Sun
-2021-06-23
-
 The SpaceFigther class is an extension of the JFrame class and uses the KeyListener interface. 
 It represents SpaceFighter objects, which is a 2-Player game. Each player has 5 lives, and the goal
 of the game is to eliminate all 5 lives from the opponent. Bullet damage is directly proportional to the
