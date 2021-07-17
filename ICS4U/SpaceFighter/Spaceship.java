@@ -1,7 +1,4 @@
 /*
-Joshua Xiao, Ivy Sun
-2021-06-23
-
 The Spaceship class represents a Space-ship object, and stores the current position, direction, speed, health remaining,
 lives remaining, and bullet diameter, which varies depending on the presence of power ups. It handles the collision detection with
 the opponent's bullets and power ups as well, using methods with boolean return type;
