@@ -1,7 +1,4 @@
 /*
-Joshua Xiao, Ivy Sun
-2021-06-23
-
 PowerUp class is used to give the powerup image icons a postion, as well as to know what type of powerup it is. 
 There are 2 types of power ups, health boost and bullet boost. Bullet boost makes the the bullets bigger in size, 
 making them more destructive. Health Boost fills the health bar back to the full and gives an extra life if the
