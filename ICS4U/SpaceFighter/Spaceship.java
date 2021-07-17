@@ -3,6 +3,7 @@ The Spaceship class represents a Space-ship object, and stores the current posit
 lives remaining, and bullet diameter, which varies depending on the presence of power ups. It handles the collision detection with
 the opponent's bullets and power ups as well, using methods with boolean return type;
 */
+
 import java.util.ArrayList;
 
 public class Spaceship {
