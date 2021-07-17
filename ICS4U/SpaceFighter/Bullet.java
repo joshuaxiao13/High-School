@@ -1,7 +1,4 @@
 /*
-Joshua Xiao, Ivy Sun
-2021-06-23
-
 The Bullet class makes the bullet move knowing the direction the bullet is moving it, its current location, and its speed. 
 It also controls the size of the bullet of the diameter 
 */
