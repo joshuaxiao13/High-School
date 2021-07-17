@@ -1,7 +1,5 @@
 # Space Figther
 
-Welcome to Space Fighter!
-
 Space Fighter is a 2-Player game where the objective is to damage the opposing player’s space-ship until they have no more lives left. The game ends when one player loses all their lives. When this occurs, input from the key board is disabled. A message on the screen will annouce the winner. Exit the program by pressing the red exit button on the top-right corner of the window at any time.
 
 The game starts automatically, 2 seconds after the program is run. The queue is the moment the START photo disappears.
