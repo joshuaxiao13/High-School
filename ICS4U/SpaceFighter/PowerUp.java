@@ -10,7 +10,7 @@ public class PowerUp {
 
     //frame dimension that match the frame in the main, and the width of powerup icon that is a square
     private static final int WINDOW_WIDTH = 1500;
-	private static final int WINDOW_HEIGHT = 800;
+    private static final int WINDOW_HEIGHT = 800;
     private static final int POWERUP_WIDTH = 20; 
 
     private double x, y;    // private variables to prevent other classes from accessing location of the powerup icon
