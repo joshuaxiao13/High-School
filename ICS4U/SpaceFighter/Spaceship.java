@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class Spaceship {
 
     private static final int WINDOW_WIDTH = 1500;
-	private static final int WINDOW_HEIGHT = 800;
-	private static final int SHIP_DIAMETER = 30;
+    private static final int WINDOW_HEIGHT = 800;
+    private static final int SHIP_DIAMETER = 30;
     private static final double TURN_RADIANS = 0.15;
 
     private double x, y, direction, speed;
